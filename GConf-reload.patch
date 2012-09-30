@@ -1,0 +1,12 @@
+diff -aurN GConf-2.18.0.orig/gconf/gconftool.c GConf-2.18.0/gconf/gconftool.c
+--- GConf-2.18.0.orig/gconf/gconftool.c	2007-03-02 23:10:13.000000000 +0100
++++ GConf-2.18.0/gconf/gconftool.c	2007-03-04 11:55:49.000000000 +0100
+@@ -3780,6 +3780,8 @@
+       ++args;
+     }
+ 
++  g_spawn_command_line_sync ("/usr/bin/killall -q -TERM " GCONF_SERVERDIR "/" GCONFD, NULL, NULL, NULL, NULL);
++
+   retval |= do_sync (conf);
+   return retval;
+ }

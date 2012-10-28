@@ -128,8 +128,8 @@ for GCONF_DIR in %{_sysconfdir}/gconf/gconf.xml.mandatory %{_sysconfdir}/gconf/g
     fi
 done
 
-%post	libs -p /sbin/ldconfig
-%postun	libs -p /sbin/ldconfig
+%post	libs -p /usr/sbin/ldconfig
+%postun	libs -p /usr/sbin/ldconfig
 
 %post backend-gsettings
 %{_bindir}/gio-querymodules %{_libdir}/gio/modules
